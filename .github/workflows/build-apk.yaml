@@ -27,8 +27,7 @@ jobs:
 
       # يضيف مجلد android/ الرسمي المطابق لإصدار Flutter المُثبَّت،
       # دون التأثير على أي ملف داخل lib/ أو pubspec.yaml الموجودين مسبقًا.
-      - name: Ensure Android platform files exist
-        run: flutter create --platforms=android --org com.btecguide .
+      
 
       - name: Get dependencies
         run: flutter pub get
