@@ -1,13 +1,12 @@
 name: Build Android APK
 
 on:
-  push:
-    branches: [ main, master ]
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -15,20 +14,16 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: '17'
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.0'
-          channel: 'stable'
+          channel: stable
           cache: true
-       - name: Fix Android project
-         run: flutter create --platforms=android .
 
-      # يضيف مجلد android/ الرسمي المطابق لإصدار Flutter المُثبَّت،
-      # دون التأثير على أي ملف داخل lib/ أو pubspec.yaml الموجودين مسبقًا.
       - name: Create Android platform
         run: flutter create --platforms=android .
 
