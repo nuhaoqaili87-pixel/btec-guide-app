@@ -24,6 +24,8 @@ jobs:
           flutter-version: '3.24.0'
           channel: 'stable'
           cache: true
+       - name: Fix Android project
+         run: flutter create --platforms=android .
 
       # يضيف مجلد android/ الرسمي المطابق لإصدار Flutter المُثبَّت،
       # دون التأثير على أي ملف داخل lib/ أو pubspec.yaml الموجودين مسبقًا.
