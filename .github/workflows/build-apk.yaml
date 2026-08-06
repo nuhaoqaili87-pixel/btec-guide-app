@@ -29,7 +29,9 @@ jobs:
 
       - name: Update Kotlin version
         run: |
-          sed -i 's/org.jetbrains.kotlin.android" version "[^"]*/org.jetbrains.kotlin.android" version "1.9.24"/' android/settings.gradle
+          sed -i 's/version "1.7.10"/version "1.9.24"/g' android/settings.gradle
+          sed -i 's/version "1.7.20"/version "1.9.24"/g' android/settings.gradle
+          sed -i 's/version "1.8.0"/version "1.9.24"/g' android/settings.gradle
 
       - name: Get dependencies
         run: flutter pub get
