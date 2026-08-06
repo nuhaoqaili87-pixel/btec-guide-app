@@ -27,6 +27,10 @@ jobs:
       - name: Create Android platform
         run: flutter create --platforms=android .
 
+      - name: Update Kotlin version
+        run: |
+          sed -i 's/org.jetbrains.kotlin.android" version "[^"]*/org.jetbrains.kotlin.android" version "1.9.24"/' android/settings.gradle
+
       - name: Get dependencies
         run: flutter pub get
 
